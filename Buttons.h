@@ -24,8 +24,11 @@
 #define Buttons_h
 
 #include <inttypes.h>
-#include <wiring.h>
-
+#if defined(ARDUINO) && ARDUINO >= 100
+#include "Arduino.h"
+#else
+#include "WProgram.h"
+#endif
 #define BUTTON_ANY 1			// b1 "any" button
 #define BUTTON_LEFT 2			// b2 "left" button
 #define BUTTON_DOWN 4			// b3 "down" button
